@@ -10,11 +10,19 @@
 #import "AppState.h"
 #import "Language.h"
 #import "Scrypt.h"
+#import "Curve25519.h"
+#import "Randomness.h"
+#import "Ed25519.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
 @import Vsys;
 
 static NSString *VKeyChainService = @"vsys.wallet.hot";
 static NSString *VKeyChainAccount = @"vsys";
 static NSString *VKeyChainAccountSalt = @"salt";
+static int  const ChecksumLength = 4;
+static int  const HashLength = 20;
+static int  const AddressLength = 1 + 1 + ChecksumLength + HashLength;
 
 static WalletMgr *VWalletMgr = nil;
 
@@ -41,6 +49,39 @@ static WalletMgr *VWalletMgr = nil;
 - (NSData *)generatePassword:(NSString *)password salt:(NSString *)salt error:(NSError **)error {
     NSData *secureData = [Scrypt scrypt:[password dataUsingEncoding:NSUTF8StringEncoding] salt:[salt dataUsingEncoding:NSUTF8StringEncoding] n:32768 r:8 p:1 length:32 error:error];
     return secureData;
+}
+
+-(NSData*)sha256HashFor:(NSData*)input
+{
+    char str[32] ={0};
+    memcpy(str, [input bytes], 32);
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(str, 32, result);
+    
+    return [[NSData alloc] initWithBytes:result length:32];
+}
+
+- (NSString *) createAddress:(NSString *)seed : (NSInteger)nonce : (NSString *)network :(NSString *)version{
+    NSString *  seedEx      =   [[NSString stringWithFormat: @"%d", nonce] stringByAppendingString:seed];
+    NSData*     dataSeed    =   VsysHashChain([seedEx dataUsingEncoding:NSUTF8StringEncoding]);
+    ECKeyPair * key         =   [Curve25519 generateKeyPair:[self sha256HashFor:dataSeed]];
+    
+    Byte * bPublicKey = (Byte *)[VsysHashChain(key.publicKey) bytes];
+    
+    Byte bWithoutCheck[AddressLength - ChecksumLength] = {0};
+    bWithoutCheck[0] = [version intValue];
+    bWithoutCheck[1] = *(Byte *)[[network dataUsingEncoding: NSUTF8StringEncoding] bytes];
+    memcpy(bWithoutCheck + 2, bPublicKey,HashLength);
+    
+    NSData* dataWithoutCheck = VsysHashChain([[NSData alloc]initWithBytes:bWithoutCheck length:AddressLength - ChecksumLength]);
+    Byte * bCheck = (Byte *)[dataWithoutCheck bytes];
+    
+    Byte bAddress[AddressLength] = {0};
+    memcpy(bAddress, bWithoutCheck,AddressLength - ChecksumLength);
+    memcpy(bAddress + AddressLength - ChecksumLength, bCheck,ChecksumLength);
+    
+    NSData* address = VsysBase58Encode([[NSData alloc]initWithBytes:bAddress length:AddressLength]);
+    return [[NSString alloc] initWithData:address encoding:NSUTF8StringEncoding];
 }
 
 - (NSError *)loadWallet:(NSString *)password {
@@ -86,6 +127,7 @@ static WalletMgr *VWalletMgr = nil;
     NSInteger nonce = [dict[@"nonce"] integerValue];
     self.nonce = nonce;
     
+    NSString* address = [self createAddress:seed:nonce:@";":@"29"];
     
     NSArray *monitorKeys = dict[@"monitorPublicKeys"];
     NSMutableArray *monitorArr = @[].mutableCopy;
