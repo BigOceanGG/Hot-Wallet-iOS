@@ -54,11 +54,11 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
 }
 
 
-+(ECKeyPair*)generateKeyPair{
++(ECKeyPair*)generateKeyPair:(NSData*)key {
     ECKeyPair* keyPair =[[ECKeyPair alloc] init];
     
     // Generate key pair as described in https://code.google.com/p/curve25519-donna/
-    memcpy(keyPair->privateKey, [[Randomness  generateRandomBytes:32] bytes], 32);
+    memcpy(keyPair->privateKey,(Byte *)[key bytes], 32);
     keyPair->privateKey[0]  &= 248;
     keyPair->privateKey[31] &= 127;
     keyPair->privateKey[31] |= 64;
@@ -113,8 +113,8 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
 
 @implementation Curve25519
 
-+(ECKeyPair*)generateKeyPair{
-    return [ECKeyPair generateKeyPair];
++(ECKeyPair*)generateKeyPair:(NSData*)key {
+    return [ECKeyPair generateKeyPair:key];
 }
 
 +(NSData*)generateSharedSecretFromPublicKey:(NSData *)theirPublicKey andKeyPair:(ECKeyPair *)keyPair{

@@ -38,6 +38,7 @@
  *  @return curve25519 key pair.
  */
 
-+ (ECKeyPair*)generateKeyPair;
++ (ECKeyPair*)generateKeyPair:(NSData
+                               *)key;
 
 @end
