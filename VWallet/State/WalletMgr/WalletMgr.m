@@ -127,8 +127,6 @@ static WalletMgr *VWalletMgr = nil;
     NSInteger nonce = [dict[@"nonce"] integerValue];
     self.nonce = nonce;
     
-    NSString* address = [self createAddress:seed:nonce:@";":@"29"];
-    
     NSArray *monitorKeys = dict[@"monitorPublicKeys"];
     NSMutableArray *monitorArr = @[].mutableCopy;
     if ([monitorKeys isKindOfClass:NSArray.class]) {
@@ -146,7 +144,11 @@ static WalletMgr *VWalletMgr = nil;
     for (int i = 0; i <= nonce; i++) {
         VsysAccount *account = [wallet generateAccount:i];
         Account *acc = [[Account alloc] init];
-        acc.originAccount = account;
+        acc.originAccount = [[VsysAccountEx alloc] init];
+        acc.originAccount.address = [self createAddress:seed:i:self.network:AddressVersion];
+        acc.originAccount.privateKey = account.privateKey;
+        acc.originAccount.publicKey = account.publicKey;
+        acc.originAccount.accountSeed = account.accountSeed;
         [accArr addObject:acc];
         [accSeedArr addObject:account.accountSeed];
     }
@@ -305,15 +307,15 @@ static WalletMgr *VWalletMgr = nil;
 
 - (NSString *)network {
     if (!_network) {
-        _network = VsysNetworkTestnet;
+        _network = NetworkTestnet;
     }
     return _network;
 }
 
 - (NSString *)networkDescription {
-    if ([_network isEqualToString: VsysNetworkMainnet]) {
+    if ([_network isEqualToString: NetworkMainnet]) {
         return VLocalize(@"const.network.mainnet");
-    } else if ([_network isEqualToString: VsysNetworkTestnet]) {
+    } else if ([_network isEqualToString: NetworkTestnet]) {
         return VLocalize(@"const.network.testnet");
     }
     return @"Unknown";

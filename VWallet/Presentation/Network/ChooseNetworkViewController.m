@@ -92,7 +92,7 @@
 }
 
 - (IBAction)nextBtnClick:(id)sender {
-    WalletMgr.shareInstance.network = !self.isTestnet ? VsysNetworkMainnet : VsysNetworkTestnet;
+    WalletMgr.shareInstance.network = !self.isTestnet ? NetworkMainnet : NetworkTestnet;
     if (self.next) {
         self.next();
     }

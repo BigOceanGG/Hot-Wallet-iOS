@@ -11,9 +11,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface VsysAccountEx : NSObject
+
+@property (nonatomic, copy) NSString* accountSeed;
+
+@property (nonatomic, copy) NSString* address;
+
+@property (nonatomic, copy) NSString* privateKey;
+
+@property (nonatomic, copy) NSString* publicKey;
+
+- (NSString*)signData:(NSData*)data;
+
+@end
+
 @interface Account : NSObject
 
-@property (nonatomic, strong) VsysAccount *originAccount;
+@property (nonatomic, strong) VsysAccountEx *originAccount;
 
 @property (nonatomic, assign) int64_t availableBalance;
 @property (nonatomic, assign) int64_t totalBalance;

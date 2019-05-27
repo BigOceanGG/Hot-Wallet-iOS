@@ -132,7 +132,7 @@
         @"attachment": [[NSString alloc] initWithData:VsysBase58Encode(tx.originTransaction.attachment) encoding:NSUTF8StringEncoding],
         @"signature": tx.signature ? : @""
     };
-    [AppServer Post:VApi([WalletMgr.shareInstance.network isEqualToString:VsysNetworkTestnet] ? ApiPayment : [ApiPayment stringByReplacingOccurrencesOfString:@"vee" withString:@"vsys"]) params:dict success:^(NSDictionary * _Nonnull response) {
+    [AppServer Post:VApi([WalletMgr.shareInstance.network isEqualToString:NetworkTestnet] ? ApiPayment : [ApiPayment stringByReplacingOccurrencesOfString:@"vee" withString:@"vsys"]) params:dict success:^(NSDictionary * _Nonnull response) {
 #if DEBUG
         NSLog(@" - response = %@", response);
 #endif

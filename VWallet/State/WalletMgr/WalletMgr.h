@@ -7,6 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Account.h"
+
+static NSString* const NetworkMainnet = @";";
+static NSString* const NetworkTestnet = @"T";
+
+static NSString* const AddressVersion = @"29";
+
 @import Vsys;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -44,6 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSError *)saveToStorage;
 
 - (NSError *)logoutWallet;
+
+- (NSString *)createAddress:(NSString *)seed : (NSInteger)nonce : (NSString *)network :(NSString *)version;
 
 - (NSString *)networkDescription;
 

@@ -10,13 +10,13 @@
 
 @import Vsys;
 
-static NSString *const MainnetHost = @"https://wallet.v.systems/api";
-static NSString *const TestnetHost = @"http://test.v.systems:9922";
+static NSString *const MainnetHost = @"https://wallet.t.top/api/";
+static NSString *const TestnetHost = @"https://testwallet.t.top/api/";
 
 @implementation ServerConfig
 
 + (NSString *)ApiHost {
-    if ([WalletMgr.shareInstance.network isEqualToString:VsysNetworkMainnet]) {
+    if ([WalletMgr.shareInstance.network isEqualToString:NetworkMainnet]) {
         return MainnetHost;
     } else {
         return TestnetHost;
