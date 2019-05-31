@@ -53,6 +53,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)createAddress:(NSString *)seed : (NSInteger)nonce : (NSString *)network :(NSString *)version;
 
+- (NSString *)createAddress:(NSString* )network : (NSString *)publicKey : (NSString *)version;
+
+- (BOOL)validateAddress:(NSString* )address;
+
 - (NSString *)networkDescription;
 
 - (NSError *)generateSalt:(NSString *)password;

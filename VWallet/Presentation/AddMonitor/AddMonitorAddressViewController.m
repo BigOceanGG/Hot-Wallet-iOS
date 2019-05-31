@@ -87,7 +87,7 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    BOOL enabled = VsysValidateAddress(self.textView.text);
+    BOOL enabled = [WalletMgr.shareInstance validateAddress:self.textView.text];
     self.nextBtn.alpha = enabled ? 1.f : 0.5f;
     self.nextBtn.tag = enabled;
     [textView updatePlaceholderState];
@@ -135,19 +135,26 @@
         return;
     }
     VsysAccount *acc = VsysNewAccount(WalletMgr.shareInstance.network, self.textView2.text);
-    if (![acc.address isEqualToString:self.textView.text]) {
+
+    VsysAccountEx *accEx = [[VsysAccountEx alloc] init];
+    accEx.address = [WalletMgr.shareInstance createAddress:WalletMgr.shareInstance.network : self.textView2.text : AddressVersion];
+    accEx.privateKey = acc.privateKey;
+    accEx.publicKey = acc.publicKey;
+    accEx.accountSeed = acc.accountSeed;
+    
+    if (![accEx.address isEqualToString:self.textView.text]) {
         [self alertWithTitle:VLocalize(@"tip.monitor.address.add.err1") confirmText:VLocalize(@"ok")];
         return;
     }
     if (self.nextBtn.tag) {
-        [self addMonitorAcocunt: acc];
+        [self addMonitorAcocunt: accEx];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self alertWithTitle:VLocalize(@"tip.monitor.address.add.err1") confirmText:VLocalize(@"ok")];
     }
 }
 
-- (void)addMonitorAcocunt:(VsysAccount *)acc {
+- (void)addMonitorAcocunt:(VsysAccountEx *)acc {
     Account *account = [Account new];
     account.originAccount = acc;
     if (![WalletMgr.shareInstance addMonitorAccount:account]) {

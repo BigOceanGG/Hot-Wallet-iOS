@@ -61,6 +61,55 @@ static WalletMgr *VWalletMgr = nil;
     return [[NSData alloc] initWithBytes:result length:32];
 }
 
+- (BOOL)validateAddress:(NSString* )address {
+    NSData* dataAddress = VsysBase58Decode([address dataUsingEncoding:NSUTF8StringEncoding]);
+    Byte * bAddress = (Byte *)[dataAddress bytes];
+    if (bAddress[0] != [AddressVersion intValue]) {
+        return NO;
+    } else if(bAddress[1] != *(Byte *)[[[self network] dataUsingEncoding: NSUTF8StringEncoding] bytes]){
+        return NO;
+    } else if(dataAddress.length != AddressLength){
+        return NO;
+    } else {
+        Byte bCheck[ChecksumLength] = {0};
+        memcpy(bCheck,bAddress + AddressLength - ChecksumLength, ChecksumLength);
+        
+        Byte bWithoutCheck[AddressLength - ChecksumLength] = {0};
+        memcpy(bWithoutCheck, bAddress, AddressLength - ChecksumLength);
+        
+        NSData* dataWithoutCheck = VsysHashChain([[NSData alloc]initWithBytes:bWithoutCheck length:AddressLength - ChecksumLength]);
+        
+        Byte * bCheckResult = (Byte *)[dataWithoutCheck bytes];
+        for (int i = 0; i < ChecksumLength; i++) {
+            if (bCheck[i] != bCheckResult[i]) {
+                return NO;
+            }
+        }
+    }
+
+    return YES;
+}
+
+- (NSString *) createAddress:(NSString* )network : (NSString *)publicKey : (NSString *)version {
+    NSData* dataPub = VsysBase58Decode([publicKey dataUsingEncoding:NSUTF8StringEncoding]);
+    Byte * bPub = (Byte *)[VsysHashChain(dataPub) bytes];
+    
+    Byte bWithoutCheck[AddressLength - ChecksumLength] = {0};
+    bWithoutCheck[0] = [version intValue];
+    bWithoutCheck[1] = *(Byte *)[[network dataUsingEncoding: NSUTF8StringEncoding] bytes];
+    memcpy(bWithoutCheck + 2, bPub,HashLength);
+    
+    NSData* dataWithoutCheck = VsysHashChain([[NSData alloc]initWithBytes:bWithoutCheck length:AddressLength - ChecksumLength]);
+    Byte * bCheck = (Byte *)[dataWithoutCheck bytes];
+    
+    Byte bAddress[AddressLength] = {0};
+    memcpy(bAddress, bWithoutCheck,AddressLength - ChecksumLength);
+    memcpy(bAddress + AddressLength - ChecksumLength, bCheck,ChecksumLength);
+    
+    NSData* address = VsysBase58Encode([[NSData alloc]initWithBytes:bAddress length:AddressLength]);
+    return [[NSString alloc] initWithData:address encoding:NSUTF8StringEncoding];
+}
+
 - (NSString *) createAddress:(NSString *)seed : (NSInteger)nonce : (NSString *)network :(NSString *)version{
     NSString *  seedEx      =   [[NSString stringWithFormat: @"%d", nonce] stringByAppendingString:seed];
     NSData*     dataSeed    =   VsysHashChain([seedEx dataUsingEncoding:NSUTF8StringEncoding]);
