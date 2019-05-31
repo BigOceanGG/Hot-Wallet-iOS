@@ -182,7 +182,11 @@ static WalletMgr *VWalletMgr = nil;
         for (NSString *pubKey in monitorKeys) {
             VsysAccount *vAcc = VsysNewAccount(self.network, pubKey);
             Account *acc = [Account new];
-            acc.originAccount = vAcc;
+            acc.originAccount = [[VsysAccountEx alloc] init];
+            acc.originAccount.address = [self createAddress:self.network:pubKey:AddressVersion];
+            acc.originAccount.privateKey = vAcc.privateKey;
+            acc.originAccount.publicKey = vAcc.publicKey;
+            acc.originAccount.accountSeed = vAcc.accountSeed;
             [monitorArr addObject:acc];
         }
     }
