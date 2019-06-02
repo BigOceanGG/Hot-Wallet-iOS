@@ -183,6 +183,7 @@ static WalletMgr *VWalletMgr = nil;
             VsysAccount *vAcc = VsysNewAccount(self.network, pubKey);
             Account *acc = [Account new];
             acc.originAccount = [[VsysAccountEx alloc] init];
+            acc.originAccount.account = vAcc;
             acc.originAccount.address = [self createAddress:self.network:pubKey:AddressVersion];
             acc.originAccount.privateKey = vAcc.privateKey;
             acc.originAccount.publicKey = vAcc.publicKey;
@@ -191,7 +192,7 @@ static WalletMgr *VWalletMgr = nil;
         }
     }
     self.monitorAccounts = monitorArr.copy;
-    
+
     NSMutableArray *accArr = @[].mutableCopy;
     NSMutableArray *accSeedArr = @[].mutableCopy;
     for (int i = 0; i <= nonce; i++) {
@@ -202,6 +203,7 @@ static WalletMgr *VWalletMgr = nil;
         acc.originAccount.privateKey = account.privateKey;
         acc.originAccount.publicKey = account.publicKey;
         acc.originAccount.accountSeed = account.accountSeed;
+        acc.originAccount.account = account;
         [accArr addObject:acc];
         [accSeedArr addObject:account.accountSeed];
     }

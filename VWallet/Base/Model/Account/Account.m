@@ -14,6 +14,10 @@
 
 @implementation VsysAccountEx
 
+- (NSString*)signData:(NSData*)data{
+    return  [self.account signData:data];
+}
+
 @end
 
 

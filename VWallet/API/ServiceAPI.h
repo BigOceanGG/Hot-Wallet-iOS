@@ -148,6 +148,6 @@ static NSString *const ApiCancelLease = @"/leasing/broadcast/cancel";
 //    "attachment": "string",
 //    "signature": "string"
 //}
-static NSString *const ApiPayment = @"/vee/broadcast/payment";
+static NSString *const ApiPayment = @"/vsys/broadcast/payment";
 
 #endif /* ServiceAPI_h */

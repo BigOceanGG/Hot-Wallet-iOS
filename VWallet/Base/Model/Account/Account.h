@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString* publicKey;
 
+@property (nonatomic, strong) VsysAccount* account;
+
 - (NSString*)signData:(NSData*)data;
 
 @end

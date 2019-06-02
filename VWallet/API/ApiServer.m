@@ -102,8 +102,9 @@
                 }
                 if ([tx.recipient isEqualToString:address]) {
                     if ([dict[@"proofs"] count]) {
-                        VsysAccount *sendAcc = VsysNewAccount(WalletMgr.shareInstance.network, dict[@"proofs"][0][@"publicKey"]);
-                        t.senderAddress = sendAcc.address;
+//                        VsysAccount *sendAcc = VsysNewAccount(WalletMgr.shareInstance.network, dict[@"proofs"][0][@"publicKey"]);
+//                        t.senderAddress = sendAcc.address;
+                        t.senderAddress = [WalletMgr.shareInstance createAddress:WalletMgr.shareInstance.network : dict[@"proofs"][0][@"publicKey"] : AddressVersion];
                     }
                 } else {
                     t.senderAddress = address;

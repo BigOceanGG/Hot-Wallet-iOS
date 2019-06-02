@@ -169,6 +169,7 @@ static NSString *const AddCellIdentifier = @"AddAccountTableViewCell";
         acc.originAccount.privateKey = account.privateKey;
         acc.originAccount.publicKey = account.publicKey;
         acc.originAccount.accountSeed = account.accountSeed;
+        acc.originAccount.account = account;
         
         [newAccountArray addObject:acc];
         [newAccountSeedArray addObject:acc.originAccount.accountSeed];

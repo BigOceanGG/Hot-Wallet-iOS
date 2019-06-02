@@ -141,6 +141,7 @@
     accEx.privateKey = acc.privateKey;
     accEx.publicKey = acc.publicKey;
     accEx.accountSeed = acc.accountSeed;
+    accEx.account = acc;
     
     if (![accEx.address isEqualToString:self.textView.text]) {
         [self alertWithTitle:VLocalize(@"tip.monitor.address.add.err1") confirmText:VLocalize(@"ok")];

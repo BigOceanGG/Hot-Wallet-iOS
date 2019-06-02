@@ -16,6 +16,7 @@
 #import "UIViewController+ColdWalletTransaction.h"
 #import "UIViewController+Transaction.h"
 #import "Transaction.h"
+#import "WalletMgr.h"
 #import "UITextView+Placeholder.h"
 #import "VColor.h"
 
@@ -173,7 +174,8 @@
 }
 
 - (BOOL)checkAddress {
-    BOOL addressValid = VsysValidateAddress(self.receiveAddressTextView.text);
+//    BOOL addressValid = VsysValidateAddress(self.receiveAddressTextView.text);
+    BOOL addressValid = [WalletMgr.shareInstance validateAddress:self.receiveAddressTextView.text];
 //    BOOL addressValid = [Regex matchRegexStr:@"^[\\dA-Za-z]+$" string:self.receiveAddressTextView.text];
     if (!addressValid && self.errorAddressLabelHeightLC.constant == 0) {
         self.errorAddressLabelHeightLC.constant = 15;
