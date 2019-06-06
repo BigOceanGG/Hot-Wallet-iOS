@@ -75,27 +75,27 @@ SM_SINGLETON_IMPLEMENTATION(VColor)
 }
 
 + (UIColor *)orangeColor {
-    return [UIColor colorWithHex:0xFF8737];
+    return [UIColor colorWithHex:0xFF6B6B];
 }
 
 + (UIColor *)mediumOrangeColor {
-    return [UIColor colorWithHex:0xFF9937];
+    return [UIColor colorWithHex:0xFF5C5C];
 }
 
 + (UIColor *)lightOrangeColor {
-    return [UIColor colorWithHex:0xFFA938];
+    return [UIColor colorWithHex:0xFF4E4E];
 }
 
 + (UIColor *)blueColor {
-    return [UIColor colorWithHex:0x526BCE];
+    return [UIColor colorWithHex:0x0E81FF];
 }
 
 + (UIColor *)mediumBlueColor {
-    return [UIColor colorWithHex:0x5D7EDD];
+    return [UIColor colorWithHex:0x0670FF];
 }
 
 + (UIColor *)lightBlueColor {
-    return [UIColor colorWithHex:0x708CFE];
+    return [UIColor colorWithHex:0x0162FF];
 }
 
 + (UIColor *)grayColor {
