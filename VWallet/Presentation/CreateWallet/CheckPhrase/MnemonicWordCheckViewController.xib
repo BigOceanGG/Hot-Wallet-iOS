@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,20 +30,20 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="559"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mc-Vb-xzy">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="380"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQn-dE-3l2">
-                                    <rect key="frame" x="0.0" y="-400" width="375" height="512"/>
+                                    <rect key="frame" x="0.0" y="-400" width="375" height="480"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_words_big" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-EK-Zan">
-                                            <rect key="frame" x="20" y="424" width="64" height="64"/>
+                                            <rect key="frame" x="20" y="424" width="32" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="ikg-gB-wzO"/>
+                                                <constraint firstAttribute="width" constant="32" id="ikg-gB-wzO"/>
                                                 <constraint firstAttribute="width" secondItem="yxq-EK-Zan" secondAttribute="height" id="m56-7c-R96"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按顺序点击助记词，确认你的助记词备份正确" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0a-Wl-6Tf" customClass="VThemeLabel">
-                                            <rect key="frame" x="100" y="424" width="255" height="64"/>
+                                            <rect key="frame" x="68" y="424" width="287" height="32"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-gc-F2O" customClass="StreamingLayoutView">
-                                    <rect key="frame" x="20" y="136" width="335" height="100"/>
+                                    <rect key="frame" x="20" y="104" width="335" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="EN3-SJ-yb9"/>
@@ -84,7 +84,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5as-1F-I5W" customClass="StreamingLayoutView">
-                                    <rect key="frame" x="20" y="260" width="335" height="100"/>
+                                    <rect key="frame" x="20" y="228" width="335" height="100"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="GSl-ND-QGQ"/>
@@ -148,6 +148,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ico_words_big" width="64" height="64"/>
+        <image name="ico_words_big" width="22" height="22"/>
     </resources>
 </document>
