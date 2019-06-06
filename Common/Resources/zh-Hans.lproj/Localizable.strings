@@ -160,7 +160,7 @@
 "about.cell2.title" = "版本号";
 
 // ---- welcome ----
-"welcome.title" = "欢迎使用WALK WALLET";
+"welcome.title" = "欢迎使用TV WALLET";
 "welcome.detail" = "请创建或导入钱包";
 "welcome.btn1.title" = "创建钱包";
 "welcome.btn2.title" = "导入钱包";
@@ -179,7 +179,7 @@
 "mnemonic.import.placeholder" = "请输入";
 
 // ---- Create Password ----
-"password.create.detail" = "请牢记您的密码！Walk Wallet不存储用户密码，无法提供找回功能";
+"password.create.detail" = "请牢记您的密码！TV Wallet不存储用户密码，无法提供找回功能";
 "password.create.item1.title" = "钱包密码";
 "password.create.item1.detail" = "请输入至少8位字符";
 "password.create.item2.title" = "确认钱包密码";
@@ -226,7 +226,7 @@
 "transaction.cancel.lease.success.title" = "您已停止租出 %@ VSYS 到\n%@";
 
 // ---- password auth ----
-"password.auth.title" = "欢迎使用WALK WALLET";
+"password.auth.title" = "欢迎使用TV WALLET";
 "password.auth.detail" = "请输入已设置的钱包密码";
 "password.auth.textfield.placeholder" = "输入密码";
 
@@ -317,15 +317,15 @@
 
 // ---- welcome ----
 "tip.welcome.title" = "官方提示";
-"tip.welcome.detail" = "为保证您的个人财产安全，请务必确保您的钱包APP来自VSYS官方网站v.systems下载";
+"tip.welcome.detail" = "为保证您的个人财产安全，请务必确保您的钱包APP来自TV官方网站t.top下载";
 "tip.welcome.btn.title" = "知道了";
 
 // ---- monitor ----
 "tip.monitor.title" = "官方提示";
-"tip.monitor.detail" = "您可以准备一个几乎不使用和可以完全断网的手机，从v.systems官网下载冷钱包。";
+"tip.monitor.detail" = "您可以准备一个几乎不使用和可以完全断网的手机，从t.top官网下载冷钱包。";
 
 // ---- touch auth ----
-"tip.secure.auth.detail" = "解锁 Walk Wallet";
+"tip.secure.auth.detail" = "解锁 TV Wallet";
 
 // others
 // ---- const ----
