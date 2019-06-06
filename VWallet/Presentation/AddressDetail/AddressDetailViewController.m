@@ -190,7 +190,7 @@
     NSMutableArray *contentData = @[].mutableCopy;
     NSString *amountStr = [NSString stringWithDecimal:(self.account.availableBalance * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES];
     NSArray <CellItem *> *cellItems1 = @[
-         VCellItem(@"address", ArrowTableViewCellIdentifier, self.account.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ VSYS", amountStr])})
+         VCellItem(@"address", ArrowTableViewCellIdentifier, self.account.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ TV", amountStr])})
                                          ];
     NSArray <CellItem *> *cellItems2 = @[
          VCellItem(@"public", ArrowTableViewCellIdentifier, self.account.originAccount.publicKey, @"", @"", @{})

@@ -118,7 +118,7 @@
     
     NSString *feeStr = [NSString stringWithDecimal:(VsysDefaultTxFee * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:0 trimTrailing:YES];
     NSMutableAttributedString *feeMas = [[NSMutableAttributedString alloc] initWithString:[VLocalize(@"account.transaction.fee") stringByAppendingString:@" "]];
-    [feeMas appendAttributedString:[[NSAttributedString alloc] initWithString:[feeStr stringByAppendingString:@" VSYS"] attributes:@{NSForegroundColorAttributeName : VColor.textSecondDeepenColor}]];
+    [feeMas appendAttributedString:[[NSAttributedString alloc] initWithString:[feeStr stringByAppendingString:@" TV"] attributes:@{NSForegroundColorAttributeName : VColor.textSecondDeepenColor}]];
     self.transactionFeeLabel.attributedText = feeMas;
     [self.continueBtn setTitle:VLocalize(@"continue") forState:UIControlStateNormal];
     

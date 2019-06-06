@@ -126,13 +126,13 @@
     NSMutableArray <CellItem *> *cellItems1 = @[].mutableCopy;
     for (Account *acc in WalletMgr.shareInstance.accounts) {
         NSString *amountStr = [NSString stringWithDecimal:(acc.totalBalance * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES];
-        [cellItems1 addObject:VCellItem(@"", ArrowTableViewCellIdentifier, acc.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ VSYS", amountStr])})];
+        [cellItems1 addObject:VCellItem(@"", ArrowTableViewCellIdentifier, acc.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ TV", amountStr])})];
     }
     
     NSMutableArray <CellItem *> *cellItems2 = @[].mutableCopy;
     for (Account *acc in WalletMgr.shareInstance.monitorAccounts) {
         NSString *amountStr = [NSString stringWithDecimal:(acc.totalBalance * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES];
-        [cellItems2 addObject:VCellItem(@"", ArrowTableViewCellIdentifier, acc.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ VSYS", amountStr])})];
+        [cellItems2 addObject:VCellItem(@"", ArrowTableViewCellIdentifier, acc.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ TV", amountStr])})];
     }
     
     NSArray *contentData = @[

@@ -84,7 +84,7 @@
 "account.transaction.fee" = "Transaction Fee";
 "account.transaction.question" = "What is the lease?";
 "account.transaction.nodelist" = "Supernode Ranklist";
-"account.transaction.lease.detail" = "Tip：Entrust to the supernode can get minting income commission, please check the supernode list website vsysrate.com";
+"account.transaction.lease.detail" = "Tip：Entrust to the supernode can get minting income commission, please check the supernode list website t.top";
 
 // ---- transaction records ----
 "transaction.list.type.0" = "All";
@@ -170,9 +170,9 @@
 // ---- Choose Network ----
 "network.choose.detail" = "After the wallet is successfully created, the network cannot be changed";
 "network.choose.cell1.title" = "Mainnet";
-"network.choose.cell1.detail" = "Under the formal network environment, users can safely store the real assets of VSYS. This environment is suitable for ordinary users' daily use.";
+"network.choose.cell1.detail" = "Under the formal network environment, users can safely store the real assets of TV. This environment is suitable for ordinary users' daily use.";
 "network.choose.cell2.title" = "Testnet";
-"network.choose.cell2.detail" = "Under the test network environment, users are not allowed to store the real assets of VSYS safely. This environment is suitable for developers to do simulation test. If you are not a professional developer, you are recommended to use the formal environment";
+"network.choose.cell2.detail" = "Under the test network environment, users are not allowed to store the real assets of TV safely. This environment is suitable for developers to do simulation test. If you are not a professional developer, you are recommended to use the formal environment";
 
 // ---- Import Mnemonic ----
 "mnemonic.import.detail" = "Mnemonic words consist of 15 words, please pay attention to the input space separated";
@@ -220,10 +220,10 @@
 "transaction.review.cell6.title" = "Description";
 
 // ---- transaction operate success ----
-"transaction.sent.success.title" = "You Sent %@ VSYS to\n%@";
-"transaction.lease.success.title" = "You Started Leasing %@ VSYS to\n%@";
+"transaction.sent.success.title" = "You Sent %@ TV to\n%@";
+"transaction.lease.success.title" = "You Started Leasing %@ TV to\n%@";
 "transaction.success.detail" = "You can check in your transaction records";
-"transaction.cancel.lease.success.title" = "You Canceled Out Leasing %@ VSYS to\n%@";
+"transaction.cancel.lease.success.title" = "You Canceled Out Leasing %@ TV to\n%@";
 
 // ---- password auth ----
 "password.auth.title" = "Welcome TV WALLET";
@@ -279,7 +279,7 @@
 
 // ---- transaction operate ----
 "tip.transaction.insufficient.balance" = "Insufficient balance";
-"tip.transaction.error.address" = "You can only send tokens to an VSYS address.";
+"tip.transaction.error.address" = "You can only send tokens to an TV address.";
 "tip.transaction.amount.invalid" = "The amount entered is invalid";
 "tip.transaction.address.is.self" = "The receiving address cannot be the current address";
 
@@ -317,7 +317,7 @@
 
 // ---- welcome ----
 "tip.welcome.title" = "Officials Hint";
-"tip.welcome.detail" = "To ensure the security of your personal property, please make sure that your wallet APP is downloaded from t.top, the official website of VSYS";
+"tip.welcome.detail" = "To ensure the security of your personal property, please make sure that your wallet APP is downloaded from t.top, the official website of TV";
 "tip.welcome.btn.title" = "I got it";
 
 // ---- monitor ----

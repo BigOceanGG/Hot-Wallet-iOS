@@ -59,8 +59,8 @@ static NSString *const CellIdentifier = @"TransactionDetailTableViewCell";
     
     VsysTransaction *oriTx = self.transaction.originTransaction;
     
-    NSString *amountStr = [[NSString stringWithDecimal:(self.transaction.originTransaction.amount * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES] stringByAppendingString:@" VSYS"];
-    NSString *feeStr = [[NSString stringWithDecimal:(self.transaction.originTransaction.fee * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES] stringByAppendingString:@" VSYS"];
+    NSString *amountStr = [[NSString stringWithDecimal:(self.transaction.originTransaction.amount * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES] stringByAppendingString:@" TV"];
+    NSString *feeStr = [[NSString stringWithDecimal:(self.transaction.originTransaction.fee * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES] stringByAppendingString:@" TV"];
     NSString *timeStr = [[[NSDate dateWithTimeIntervalSince1970:self.transaction.originTransaction.timestamp / VTimestampMultiple] stringWithDateFormat:@"yyyy-MM-dd HH:mm:ss"] stringByAppendingFormat:@" (%@)", VLocalize(@"transaction.detail.chinese.standard.time")];
     
     NSMutableArray *showData = @[

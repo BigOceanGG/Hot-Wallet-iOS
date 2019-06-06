@@ -84,7 +84,7 @@
 "account.transaction.fee" = "手续费";
 "account.transaction.question" = "什么是铸币？";
 "account.transaction.nodelist" = "超级节点列表";
-"account.transaction.lease.detail" = "提示：租出给超级节点才可以获得铸币收益分佣，请在超级节点列表网站vsysrate.com淘一下";
+"account.transaction.lease.detail" = "提示：租出给超级节点才可以获得铸币收益分佣，请在超级节点列表网站t.top淘一下";
 
 // ---- transaction records ----
 "transaction.list.type.0" = "全部";
@@ -170,9 +170,9 @@
 // ---- Choose Network ----
 "network.choose.detail" = "成功创建钱包后，网络环境将不能进行修改";
 "network.choose.cell1.title" = "正式环境";
-"network.choose.cell1.detail" = "在正式网络环境下，用户可进行VSYS资产的安全存储，此环境适用于普通用户日常使用";
+"network.choose.cell1.detail" = "在正式网络环境下，用户可进行TV资产的安全存储，此环境适用于普通用户日常使用";
 "network.choose.cell2.title" = "测试环境";
-"network.choose.cell2.detail" = "在测试网络环境下，用户不可进行VSYS真实资产的安全存储，此环境适用于开发者做模拟测试使用，若非专业开发者，建议您使用正式环境";
+"network.choose.cell2.detail" = "在测试网络环境下，用户不可进行TV真实资产的安全存储，此环境适用于开发者做模拟测试使用，若非专业开发者，建议您使用正式环境";
 
 // ---- Import Mnemonic ----
 "mnemonic.import.detail" = "助记词由15个英文单词组成，注意输入时用空格分开，末尾不能有空格或换行";
@@ -220,10 +220,10 @@
 "transaction.review.cell6.title" = "备注";
 
 // ---- transaction operate success ----
-"transaction.sent.success.title" = "您成功发送 %@ VSYS 到\n%@";
-"transaction.lease.success.title" = "您已租出 %@ VSYS 到\n%@";
+"transaction.sent.success.title" = "您成功发送 %@ TV 到\n%@";
+"transaction.lease.success.title" = "您已租出 %@ TV 到\n%@";
 "transaction.success.detail" = "您可以在交易记录里面查看此笔交易详情";
-"transaction.cancel.lease.success.title" = "您已停止租出 %@ VSYS 到\n%@";
+"transaction.cancel.lease.success.title" = "您已停止租出 %@ TV 到\n%@";
 
 // ---- password auth ----
 "password.auth.title" = "欢迎使用TV WALLET";
@@ -279,7 +279,7 @@
 
 // ---- transaction operate ----
 "tip.transaction.insufficient.balance" = "余额不足";
-"tip.transaction.error.address" = "您只能转账给一个VSYS地址";
+"tip.transaction.error.address" = "您只能转账给一个TV地址";
 "tip.transaction.amount.invalid" = "输入的数额无效";
 "tip.transaction.address.is.self" = "接收地址不能是当前地址";
 

@@ -74,7 +74,7 @@
     self.sortLabel.text = [NSString stringWithFormat:@"%02d", (int)_account.sort];
     self.valueLabel.text = [_account.originAccount.address explicitCount:12 maxAsteriskCount:6];
     NSString *totalBalanceStr = [NSString stringWithDecimal:(_account.totalBalance * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES];
-    self.valueLabel1.text = [NSString stringWithFormat:@"%@ VSYS", totalBalanceStr];
+    self.valueLabel1.text = [NSString stringWithFormat:@"%@ TV", totalBalanceStr];
 }
 
 @end
