@@ -190,10 +190,10 @@
     NSMutableArray *contentData = @[].mutableCopy;
     NSString *amountStr = [NSString stringWithDecimal:(self.account.availableBalance * 1.0 / VsysVSYS) maxFractionDigits:8 minFractionDigits:2 trimTrailing:YES];
     NSArray <CellItem *> *cellItems1 = @[
-         VCellItem(@"address", ArrowTableViewCellIdentifier, self.account.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ TV", amountStr])})
+         VCellItem(@"address", ArrowTableViewCellIdentifier, self.account.originAccount.address, @"", @"", @{@"secondTitle": ([NSString stringWithFormat:@"%@ TV", amountStr])},@"icon_copy")
                                          ];
     NSArray <CellItem *> *cellItems2 = @[
-         VCellItem(@"public", ArrowTableViewCellIdentifier, self.account.originAccount.publicKey, @"", @"", @{})
+         VCellItem(@"public", ArrowTableViewCellIdentifier, self.account.originAccount.publicKey, @"", @"", @{},@"icon_copy")
                                          ];
     
     [contentData addObject:VSectionItem(VLocalize(@"address.detail.section1.title"), cellItems1)];
@@ -201,10 +201,10 @@
     
     if (![self.account.originAccount.privateKey isEqualToString:@""]) {
         NSArray <CellItem *> *cellItems3 = @[
-                                             VCellItem(@"private", ArrowTableViewCellIdentifier, self.showPrivateKey ? self.account.originAccount.privateKey : VLocalize(@"address.detail.cell.hide.title"), @"", @"", @{})
+                                             VCellItem(@"private", ArrowTableViewCellIdentifier, self.showPrivateKey ? self.account.originAccount.privateKey : VLocalize(@"address.detail.cell.hide.title"), @"", @"", @{},@"icon_copy")
                                              ];
         NSArray <CellItem *> *cellItems4 = @[
-                                             VCellItem(@"seed", ArrowTableViewCellIdentifier, self.showSeed ? WalletMgr.shareInstance.seed : VLocalize(@"address.detail.cell.hide.title"), @"", @"", @{})
+                                             VCellItem(@"seed", ArrowTableViewCellIdentifier, self.showSeed ? WalletMgr.shareInstance.seed : VLocalize(@"address.detail.cell.hide.title"), @"", @"", @{},@"icon_copy")
                                              ];
         [contentData addObject:VSectionItem(VLocalize(@"address.detail.section3.title"), cellItems3)];
         [contentData addObject:VSectionItem(VLocalize(@"address.detail.section4.title"), cellItems4)];

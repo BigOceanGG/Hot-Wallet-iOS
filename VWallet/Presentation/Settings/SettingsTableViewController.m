@@ -192,23 +192,23 @@
 
 - (void)initContentData {
     NSArray <CellItem *> *cellItems1 = @[
-      VCellItem(@"device_lock", ArrowTableViewCellIdentifier, VLocalize(@"settings.section1.cell1.title"), @"ico_lock", VLocalize(@""), @{}),
+      VCellItem(@"device_lock", ArrowTableViewCellIdentifier, VLocalize(@"settings.section1.cell1.title"), @"ico_lock", VLocalize(@""), @{},@""),
       ];
     
     NSArray <CellItem *> *cellItems2 = @[
-     VCellItem(@"backup_mnemonic", ArrowTableViewCellIdentifier, VLocalize(@"settings.section2.cell1.title"), @"ico_backup_word", VLocalize(@"settings.section2.cell1.detail"), @{}),
-     VCellItem(@"addresses", ArrowTableViewCellIdentifier, VLocalize(@"settings.section2.cell2.title"), @"ico_address", VLocalize(@""), @{})
+     VCellItem(@"backup_mnemonic", ArrowTableViewCellIdentifier, VLocalize(@"settings.section2.cell1.title"), @"ico_backup_word", VLocalize(@"settings.section2.cell1.detail"), @{},@""),
+     VCellItem(@"addresses", ArrowTableViewCellIdentifier, VLocalize(@"settings.section2.cell2.title"), @"ico_address", VLocalize(@""), @{},@"")
      ];
     
     
     NSArray <CellItem *> *cellItems3 = @[
-     VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell4.title"), @"ico_web", [WalletMgr.shareInstance networkDescription], (@{@"no_arrow":@(YES), @"descColor": VColor.textSecondColor})),
-     VCellItem(@"language", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell1.title"), @"ico_language", [Language.shareInstance getDescByType:Language.shareInstance.languageType], (@{@"descColor": VColor.textSecondColor})),
-     VCellItem(@"about", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell2.title"), @"ico_about", @"", @{})
+     VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell4.title"), @"ico_web", [WalletMgr.shareInstance networkDescription], (@{@"no_arrow":@(YES), @"descColor": VColor.textSecondColor}),@""),
+     VCellItem(@"language", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell1.title"), @"ico_language", [Language.shareInstance getDescByType:Language.shareInstance.languageType], (@{@"descColor": VColor.textSecondColor}),@""),
+     VCellItem(@"about", ArrowTableViewCellIdentifier, VLocalize(@"settings.section3.cell2.title"), @"ico_about", @"", @{},@"")
      ];
     
     NSArray <CellItem *> *cellItems4 = @[
-     VCellItem(@"logout", NormalTableViewCellIdentifier, VLocalize(@"settings.section3.cell3.title"), @"ico_cancel", @"", @{@"titleColor": VColor.redColor})
+     VCellItem(@"logout", NormalTableViewCellIdentifier, VLocalize(@"settings.section3.cell3.title"), @"ico_cancel", @"", @{@"titleColor": VColor.redColor},@"")
      ];
     
     NSArray *contentData = @[

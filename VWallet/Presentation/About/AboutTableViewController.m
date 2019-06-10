@@ -90,8 +90,8 @@
 
 - (void)initContentData {
     NSArray <CellItem *> *cellItems1 = @[
-         VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"about.cell1.title"), @"", @"t.top", (@{@"no_arrow":@(YES)})),
-         VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"about.cell2.title"), @"", VLocalize([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]), (@{@"no_arrow":@(YES)})),
+         VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"about.cell1.title"), @"", @"t.top", (@{@"no_arrow":@(YES)}),@""),
+         VCellItem(@"", ArrowTableViewCellIdentifier, VLocalize(@"about.cell2.title"), @"", VLocalize([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]), (@{@"no_arrow":@(YES)}),@""),
      ];
     NSArray *contentData = @[
          VSectionItem(VLocalize(@""), cellItems1),

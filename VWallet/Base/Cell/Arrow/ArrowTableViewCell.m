@@ -44,11 +44,16 @@
     } else {
         self.leftSecondLabel.hidden = YES;
     }
-    UIImage *img = [UIImage imageNamed:item.icon];
-    if (!img) {
+    UIImage *icon = [UIImage imageNamed:item.icon];
+    if (!icon) {
         self.iconImageView.hidden = YES;
     } else {
         self.iconImageView.image = [UIImage imageNamed:item.icon];
+    }
+    
+    UIImage *img = [UIImage imageNamed:item.image];
+    if (img) {
+        self.arrowImageView.image = [UIImage imageNamed:item.image];
     }
     
     self.leftLabel.text = item.title;

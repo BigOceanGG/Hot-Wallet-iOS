@@ -180,10 +180,10 @@
 - (void)initContentData {
     NSMutableArray <CellItem *> *cellItems1 = @[].mutableCopy;
     if (![[TouchIDTool authType] isEqualToString:@""]) {
-        [cellItems1 addObject:VCellItem(@"touchID", SwitchTableViewCellIdentifier, [TouchIDTool authType], @"", @"", (@{@"descColor": VColor.textSecondColor, @"switcher":@(AppState.shareInstance.lockEnable)}))];
+        [cellItems1 addObject:VCellItem(@"touchID", SwitchTableViewCellIdentifier, [TouchIDTool authType], @"", @"", (@{@"descColor": VColor.textSecondColor, @"switcher":@(AppState.shareInstance.lockEnable)}),@"")];
 
     }
-    [cellItems1 addObject:VCellItem(@"auto_lock", ArrowTableViewCellIdentifier, VLocalize(@"device.lock.cell2.title"), @"", [AppState.shareInstance lockTimeDescription], @{})];
+    [cellItems1 addObject:VCellItem(@"auto_lock", ArrowTableViewCellIdentifier, VLocalize(@"device.lock.cell2.title"), @"", [AppState.shareInstance lockTimeDescription], @{},@"")];
     NSArray *contentData = @[
                              VSectionItem(VLocalize(@""), cellItems1.copy),
                              ];
