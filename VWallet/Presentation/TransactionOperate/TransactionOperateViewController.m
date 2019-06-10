@@ -198,12 +198,12 @@
 }
 
 - (IBAction)questionBtnClick:(id)sender {
-    [self openWebUrl:@"https://vsysrate.com/wiki/vsys-coin-leasing.html"];
+    [self openWebUrl:@"http://exp.t.top"];
 
 }
 
 - (IBAction)nodeListBtnClick:(id)sender {
-    [self openWebUrl:@"https://vsysrate.com"];
+    [self openWebUrl:@"http://exp.t.top"];
 }
 
 - (void)openWebUrl:(NSString *)urlStr {
