@@ -50,7 +50,6 @@
     UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleDefault;
     self.pageTitleLabel.text = VLocalize(@"password.auth.title");
     self.pageSubtitleLabel.text = VLocalize(@"password.auth.detail");
-    self.enterBtn.tintColor = UIColor.grayColor;
     self.pwdTextField.placeholder = VLocalize(@"password.auth.textfield.placeholder");
     [self activeAuth];
     
