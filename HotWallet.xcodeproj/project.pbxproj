@@ -227,7 +227,7 @@
 /* Begin PBXFileReference section */
 		20398EE6FDC06B493FA9EE1F /* Pods-VWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-VWallet/Pods-VWallet.release.xcconfig"; sourceTree = "<group>"; };
 		40045B3B21E63B8E0057045B /* Vsys.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vsys.framework; sourceTree = "<group>"; };
-		4023E12421AE1FAF00E18D5D /* VWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4023E12421AE1FAF00E18D5D /* HotWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		402BBAE921E5D2F4005F2794 /* AppDelegate+DismissKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+DismissKeyboard.m"; sourceTree = "<group>"; };
 		402BBAEA21E5D2F4005F2794 /* AppDelegate+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+DismissKeyboard.h"; sourceTree = "<group>"; };
 		402BBAED21E5D326005F2794 /* AccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailViewController.m; sourceTree = "<group>"; };
@@ -634,7 +634,7 @@
 		4023E12521AE1FAF00E18D5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4023E12421AE1FAF00E18D5D /* VWallet.app */,
+				4023E12421AE1FAF00E18D5D /* HotWallet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2079,9 +2079,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4023E12321AE1FAF00E18D5D /* VWallet */ = {
+		4023E12321AE1FAF00E18D5D /* HotWallet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4023E13A21AE1FB100E18D5D /* Build configuration list for PBXNativeTarget "VWallet" */;
+			buildConfigurationList = 4023E13A21AE1FB100E18D5D /* Build configuration list for PBXNativeTarget "HotWallet" */;
 			buildPhases = (
 				A0B7546AF8C3EDFFCD5FB6C7 /* [CP] Check Pods Manifest.lock */,
 				4023E12021AE1FAF00E18D5D /* Sources */,
@@ -2094,9 +2094,9 @@
 			);
 			dependencies = (
 			);
-			name = VWallet;
+			name = HotWallet;
 			productName = VeeWallet;
-			productReference = 4023E12421AE1FAF00E18D5D /* VWallet.app */;
+			productReference = 4023E12421AE1FAF00E18D5D /* HotWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2113,7 +2113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4023E11F21AE1FAF00E18D5D /* Build configuration list for PBXProject "VWallet" */;
+			buildConfigurationList = 4023E11F21AE1FAF00E18D5D /* Build configuration list for PBXProject "HotWallet" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -2127,7 +2127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4023E12321AE1FAF00E18D5D /* VWallet */,
+				4023E12321AE1FAF00E18D5D /* HotWallet */,
 			);
 		};
 /* End PBXProject section */
@@ -2618,7 +2618,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 4UB2TU3M26;
+				DEVELOPMENT_TEAM = FUXVPW2D5C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2633,7 +2633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = systems.v.hotwalletapp;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.hotwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2648,7 +2648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UB2TU3M26;
+				DEVELOPMENT_TEAM = FUXVPW2D5C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2662,7 +2662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = systems.v.hotwalletapp;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.hotwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2673,7 +2673,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4023E11F21AE1FAF00E18D5D /* Build configuration list for PBXProject "VWallet" */ = {
+		4023E11F21AE1FAF00E18D5D /* Build configuration list for PBXProject "HotWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4023E13821AE1FB100E18D5D /* Debug */,
@@ -2682,7 +2682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4023E13A21AE1FB100E18D5D /* Build configuration list for PBXNativeTarget "VWallet" */ = {
+		4023E13A21AE1FB100E18D5D /* Build configuration list for PBXNativeTarget "HotWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4023E13B21AE1FB100E18D5D /* Debug */,
