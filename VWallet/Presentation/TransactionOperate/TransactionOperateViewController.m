@@ -198,12 +198,12 @@
 }
 
 - (IBAction)questionBtnClick:(id)sender {
-    [self openWebUrl:@"http://exp.t.top"];
+    [self openWebUrl:@"http://t.top"];
 
 }
 
 - (IBAction)nodeListBtnClick:(id)sender {
-    [self openWebUrl:@"http://exp.t.top"];
+    [self openWebUrl:@"http://t.top"];
 }
 
 - (void)openWebUrl:(NSString *)urlStr {

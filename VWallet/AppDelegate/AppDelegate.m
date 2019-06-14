@@ -14,7 +14,11 @@
 #import "AppDelegate+DismissKeyboard.h"
 #import "ApiServer.h"
 #import "WindowManager.h"
+#import "VAlertViewController.h"
+#import "Language.h"
 
+static NSString* const urlServer    = @"http://version.t.top/v1/appVsersion";
+static NSString* const urlDownload  = @"https://testflight.apple.com/join/FPpJXxb1";
 @interface AppDelegate ()
 @end
 
@@ -30,9 +34,55 @@
         self.window.rootViewController = VStoryboard.Generate.instantiateInitialViewController;
     }
     sleep(1.f);
+    [self updateApp];
+
     return YES;
 }
 
+- (NSDictionary *)jsonStringToDictionary:(NSString *)jsonStr{
+    if (jsonStr == nil){
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (error && [dict[@"message"] isEqualToString:@"success"]){
+        return nil;
+    }
+    
+    return dict;
+}
+
+- (void) updateApp {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    int localVersion =  [[infoDictionary objectForKey:@"CFBundleVersion"] intValue];
+    
+    NSURL *appUrl = [NSURL URLWithString:[NSString stringWithFormat:urlServer]];
+    NSString *appMsg = [NSString stringWithContentsOfURL:appUrl encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary *appMsgDict = [self jsonStringToDictionary:appMsg];
+    int remoteVersion = 0;
+    if(appMsgDict){
+        remoteVersion =  [appMsgDict[@"data"][@"hotAppIosVersion"] intValue];
+    }
+    
+    if(localVersion < remoteVersion){
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        alertWindow.rootViewController = [[UIViewController alloc] init];
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        [alertWindow makeKeyAndVisible];
+        VAlertViewController *alertController = [[VAlertViewController alloc] initWithTitle:VLocalize(@"") secondTitle:VLocalize(@"nav.title.update") contentView:^(UIStackView * _Nonnull view) {
+            
+        } cancelTitle:VLocalize(@"cancel") confirmTitle:VLocalize(@"confirm") cancel:^{
+            
+        } confirm:^{
+            NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:urlDownload]];
+            NSDictionary *options = @{UIApplicationOpenURLOptionUniversalLinksOnly : @YES};
+            [[UIApplication sharedApplication] openURL:url options:options completionHandler:nil];
+        }];
+        [alertWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -69,6 +119,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

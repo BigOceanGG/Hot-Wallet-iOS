@@ -44,6 +44,7 @@
 "nav.title.transaction.detail" = "交易详情";
 "nav.title.date.filter" = "日期筛选";
 "nav.title.set.amount" = "设置接收数量";
+"nav.title.update" = "发现新版本，是否立即更新";
 
 // ---- tabbar page title ----
 "tabbar.title.0" = "钱包";

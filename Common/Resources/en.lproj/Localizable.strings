@@ -44,6 +44,7 @@
 "nav.title.transaction.detail" = "Transaction Detail";
 "nav.title.date.filter" = "Filter by date";
 "nav.title.set.amount" = "Set Amount";
+"nav.title.update" = "Discover the new version and update it immediately";
 
 // ---- tabbar page title ----
 "tabbar.title.0" = "Wallet";
