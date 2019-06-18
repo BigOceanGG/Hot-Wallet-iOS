@@ -18,7 +18,6 @@
 #import "Language.h"
 
 static NSString* const urlServer    = @"http://version.t.top/v1/appVsersion";
-static NSString* const urlDownload  = @"https://testflight.apple.com/join/FPpJXxb1";
 @interface AppDelegate ()
 @end
 
@@ -62,8 +61,10 @@ static NSString* const urlDownload  = @"https://testflight.apple.com/join/FPpJXx
     NSString *appMsg = [NSString stringWithContentsOfURL:appUrl encoding:NSUTF8StringEncoding error:nil];
     NSDictionary *appMsgDict = [self jsonStringToDictionary:appMsg];
     int remoteVersion = 0;
+    NSString* urlDownload = NULL;
     if(appMsgDict){
-        remoteVersion =  [appMsgDict[@"data"][@"hotAppIosVersion"] intValue];
+        remoteVersion   =   [appMsgDict[@"data"][@"hotAppIosVersion"] intValue];
+        urlDownload     =   appMsgDict[@"data"][@"hotIosUrl"];
     }
     
     if(localVersion < remoteVersion){
