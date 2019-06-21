@@ -64,11 +64,11 @@ static WalletMgr *VWalletMgr = nil;
 - (BOOL)validateAddress:(NSString* )address {
     NSData* dataAddress = VsysBase58Decode([address dataUsingEncoding:NSUTF8StringEncoding]);
     Byte * bAddress = (Byte *)[dataAddress bytes];
-    if (bAddress[0] != [AddressVersion intValue]) {
+    if (dataAddress.length != AddressLength) {
         return NO;
     } else if(bAddress[1] != *(Byte *)[[[self network] dataUsingEncoding: NSUTF8StringEncoding] bytes]){
         return NO;
-    } else if(dataAddress.length != AddressLength){
+    } else if(bAddress[0] != [AddressVersion intValue]){
         return NO;
     } else {
         Byte bCheck[ChecksumLength] = {0};
