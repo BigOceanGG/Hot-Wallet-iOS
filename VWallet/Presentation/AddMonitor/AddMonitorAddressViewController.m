@@ -117,7 +117,8 @@
     }
 
     NSString *address = dict[@"address"] ? : @"";
-    if (![WalletMgr.shareInstance.network isEqualToString:VsysGetNetworkFromAddress(address)]) {
+    NSString *network = [WalletMgr.shareInstance getNetworkFromAddress:address];
+    if (![WalletMgr.shareInstance.network isEqualToString:network]) {
         [self alertWithTitle:VLocalize(@"tip.monitor.address.add.network.err") confirmText:nil];
         return ;
     }

@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)validateAddress:(NSString* )address;
 
+- (NSString *)getNetworkFromAddress:(NSString*)address;
+
 - (NSString *)networkDescription;
 
 - (NSError *)generateSalt:(NSString *)password;

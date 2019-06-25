@@ -61,6 +61,17 @@ static WalletMgr *VWalletMgr = nil;
     return [[NSData alloc] initWithBytes:result length:32];
 }
 
+- (NSString *)getNetworkFromAddress:(NSString*)address
+{
+    NSData* dataAddress = VsysBase58Decode([address dataUsingEncoding:NSUTF8StringEncoding]);
+    Byte * bAddress = (Byte *)[dataAddress bytes];
+    if (dataAddress.length != AddressLength) {
+        return NULL;
+    }
+    
+    return [NSString stringWithFormat:@"%c",bAddress[1]];
+}
+
 - (BOOL)validateAddress:(NSString* )address {
     NSData* dataAddress = VsysBase58Decode([address dataUsingEncoding:NSUTF8StringEncoding]);
     Byte * bAddress = (Byte *)[dataAddress bytes];
