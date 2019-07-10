@@ -323,7 +323,7 @@
 
 // ---- monitor ----
 "tip.monitor.title" = "Officials Hint";
-"tip.monitor.detail" = "You can download a cold wallet from the v.stems website with a phone that you barely use and can completely disconnect from the Internet";
+"tip.monitor.detail" = "You can download a cold wallet from the t.top website with a phone that you barely use and can completely disconnect from the Internet";
 
 // ---- touch auth ----
 "tip.secure.auth.detail" = "Unlock TV Wallet";
