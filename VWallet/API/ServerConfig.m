@@ -10,8 +10,8 @@
 
 @import Vsys;
 
-static NSString *const MainnetHost = @"https://wallet.t.top/api";
-static NSString *const TestnetHost = @"https://testwallet.t.top/api";
+static NSString *const MainnetHost = @"https://qb.t.top/api";
+static NSString *const TestnetHost = @"https://testqb.t.top/api";
 
 @implementation ServerConfig
 
